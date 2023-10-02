@@ -16,8 +16,15 @@ app.get("/", (req, res) => {
   res.json("Hello D");
 });
 
-app.get("/", (req, res) => {
-  res.json("Hello D");
+//GET request for 'blog_post' table in my 'travelblog_db' psql database
+app.get("/api/blog_post/", async (req, res) => {
+  try {
+    const { rows: blog_post } = await db.query("SELECT * FROM blog_post");
+
+    res.send(blog_post);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
 });
 
 app.listen(PORT, () =>

@@ -3,7 +3,9 @@ import { useState } from "react";
 function App() {
   return (
     <>
-      <div>Testing</div>
+      <div>
+        <h2>Blog title </h2>
+      </div>
     </>
   );
 }
