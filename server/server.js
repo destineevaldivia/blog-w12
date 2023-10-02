@@ -10,10 +10,16 @@ const PORT = 8080;
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// //creates an endpoint for the route `/`
+
+// creates an endpoint for the route `/`
 app.get("/", (req, res) => {
   res.json("Hello D");
 });
+
+app.get("/", (req, res) => {
+  res.json("Hello D");
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on Port http://localhost:${PORT}`)
 );
