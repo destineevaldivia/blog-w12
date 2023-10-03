@@ -1,12 +1,11 @@
-import { useState } from "react";
+import Blog from "./Blog";
 
 function App() {
   return (
-    <>
-      <div>
-        <h2>Blog title </h2>
-      </div>
-    </>
+    <div>
+      <h2>Destinee's Travel Blog </h2>
+      <Blog />
+    </div>
   );
 }
 
