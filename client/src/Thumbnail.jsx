@@ -1,11 +1,6 @@
 import React from "react";
 
-function Thumbnail(props) {
-  return (
-    <div>
-      {props.updated}
-      {props.location}
-    </div>
-  );
+function Thumbnail() {
+  return <div></div>;
 }
 export default Thumbnail;
