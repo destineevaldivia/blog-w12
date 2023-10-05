@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 
+// This component:
 // Responsible for rendering a form to add new blog posts
 // Handles form submission and communication with server
 
 const AddPostForm = ({ loadData }) => {
-  // Defines two state variables using useState hook
-  // 'data' stores data received from the server
-  // 'formData' holds form input values
-  const [data, setData] = useState();
+  // 'formData' state variable holds the form input values
+  //   ** might delete this if i dont end up using it: const [data, setData] = useState();
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -22,7 +21,6 @@ const AddPostForm = ({ loadData }) => {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-
     // Updates 'formData' state by creating a new object with the updated field value
     setFormData((values) => ({ ...values, [name]: value }));
   };
@@ -30,20 +28,22 @@ const AddPostForm = ({ loadData }) => {
   // Handles the form submission when the "Add new post" button is clicked
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log({ formData });
+
+    const payload = JSON.stringify(formData);
+    // console.log(payload);
 
     // Sends a POST request to the server with the 'formData' as JSON data
     fetch("http://localhost:8080/api/home", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: payload,
     })
       .then((response) => {
         return response.json();
       })
       .then((dataResponse) => {
         // Updates the 'data' state with the response data.
-        setData(dataResponse);
+        // ** might need to delete: setData(dataResponse);
         console.log("data received from the post request ", dataResponse);
         // Calls the 'loadData' function (passed as a prop) to refresh the blog post list
         loadData();
