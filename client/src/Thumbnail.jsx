@@ -3,6 +3,7 @@ const Thumbnail = (props) => {
   return (
     <div>
       <div className="thumbnail-container">
+        {id}
         {title}
         {location}
       </div>

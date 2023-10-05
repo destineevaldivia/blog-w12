@@ -15,6 +15,17 @@ const BlogTable = ({ blogPost }) => {
             />
           ))}
         </div>
+        <div className="individualpost-container">
+          {blogPost.map((item) => (
+            <IndividualPost
+              key={`individual+${item.id}`}
+              title={item.title}
+              location={item.location}
+              content={item.content}
+              author={item.author}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

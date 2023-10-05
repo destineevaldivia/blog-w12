@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 // This component:
 // Responsible for rendering a form to add new blog posts
