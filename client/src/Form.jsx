@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 
+// Responsible for rendering a form to add new blog posts
+// Handles form submission and communication with server
+
 const AddPostForm = ({ loadData }) => {
+  // Defines two state variables using useState hook
+  // 'data' stores data received from the server
+  // 'formData' holds form input values
   const [data, setData] = useState();
   const [formData, setFormData] = useState({
     id: "",
@@ -11,21 +17,22 @@ const AddPostForm = ({ loadData }) => {
     created_at: "",
     updated_at: "",
   });
-  //   console.log(formData);
+
+  // Handles changes in form input fields
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+
+    // Updates 'formData' state by creating a new object with the updated field value
     setFormData((values) => ({ ...values, [name]: value }));
   };
 
-  console.log(data);
-
+  // Handles the form submission when the "Add new post" button is clicked
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ formData });
+    // console.log({ formData });
 
-    //A function to handle the post request
-
+    // Sends a POST request to the server with the 'formData' as JSON data
     fetch("http://localhost:8080/api/home", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -35,15 +42,18 @@ const AddPostForm = ({ loadData }) => {
         return response.json();
       })
       .then((dataResponse) => {
+        // Updates the 'data' state with the response data.
         setData(dataResponse);
-        console.log("From the post ", dataResponse);
+        console.log("data received from the post request ", dataResponse);
+        // Calls the 'loadData' function (passed as a prop) to refresh the blog post list
         loadData();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log("Error while sending POST request:", error);
       });
   };
 
+  // Renders the form
   return (
     <div>
       <form onSubmit={handleSubmit}>
