@@ -1,1 +1,22 @@
-
+.thumbnail-container {
+  width: 300px; /* Adjust the width as needed */
+  border: 1px solid #ccc;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.thumbnail-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.thumbnail-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+.thumbnail-description {
+  font-size: 14px;
+  padding: 10px;
+}

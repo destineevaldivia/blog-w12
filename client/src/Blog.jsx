@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-// import BlogTable from "./BlogTable";
+import BlogTable from "./BlogTable";
+import AddPostForm from "./Form";
 
 const Blog = () => {
   // This is my original state with array of blog posts
@@ -13,7 +14,7 @@ const Blog = () => {
       .then((data) => {
         // if successful, update the blog_post state using the setBlogPost function
         setBlogPost(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => {
         console.error("Error fetching data in loadData fnx:", error);
@@ -23,17 +24,15 @@ const Blog = () => {
   useEffect(() => {
     loadData();
   }, []);
+
   console.log(blogPost);
 
   return (
-    blogPost && (
-      <div>
-        {blogPost.map((item) => (
-          <div key={item.id}>{item.title}</div>
-        ))}
-        ;
-      </div>
-    )
+    <div>
+      <h2>Destinees Travel Blog </h2>
+      <BlogTable blogPost={blogPost} />
+      <AddPostForm loadData={loadData} />
+    </div>
   );
 };
 export default Blog;
