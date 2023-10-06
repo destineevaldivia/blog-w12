@@ -1,22 +1,23 @@
 import Thumbnail from "./Thumbnail";
+import IndividualPost from "./IndividualPost";
+import { Link } from "react-router-dom";
 
 // Accepts the blogPost state as a prop, which contains an array of my data
 // Renders a list of blog post thumbnails by mapping through the data and rendering individual thumbnmail components
-const BlogTable = ({ blogPost }) => {
+// Renders IndividualPost as well, decided this was best based on blogPost data passed as prop here
+const BlogTable = ({ blogPosts }) => {
   return (
     <>
       <div>
         <div className="thumbnail-container">
-          {blogPost.map((item) => (
-            <Thumbnail
-              key={`thumbnail+${item.id}`}
-              title={item.title}
-              location={item.location}
-            />
+          {blogPosts.map((item) => (
+            <Link key={`thumbnail+${item.id}`} to={`/blog/${item.id}`}>
+              <Thumbnail title={item.title} location={item.location} />
+            </Link>
           ))}
         </div>
         <div className="individualpost-container">
-          {blogPost.map((item) => (
+          {blogPosts.map((item) => (
             <IndividualPost
               key={`individual+${item.id}`}
               title={item.title}
