@@ -1,12 +1,9 @@
 import { useState } from "react";
-
-// This component:
 // Responsible for rendering a form to add new blog posts
 // Handles form submission and communication with server
 
 const AddPostForm = ({ loadData }) => {
   // 'formData' state variable holds the form input values
-  //   ** might delete this if i dont end up using it: const [data, setData] = useState();
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -42,10 +39,7 @@ const AddPostForm = ({ loadData }) => {
         return response.json();
       })
       .then((dataResponse) => {
-        // Updates the 'data' state with the response data.
-        // ** might need to delete: setData(dataResponse);
-        console.log("data received from the post request ", dataResponse);
-        // Calls the 'loadData' function (passed as a prop) to refresh the blog post list
+        // Calls the 'loadData' function to refresh the blog post list
         loadData();
       })
       .catch((error) => {

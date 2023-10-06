@@ -8,14 +8,14 @@ const BlogTable = ({ blogPosts }) => {
   return (
     <>
       <div>
-        <div className="thumbnail-container">
+        <div>
           {blogPosts.map((item) => (
             <Link key={`thumbnail+${item.id}`} to={`/blog/${item.id}`}>
-              <Thumbnail title={item.title} location={item.location} />
+              <Thumbnail location={item.location} />
             </Link>
           ))}
         </div>
-        <div className="individualpost-container">
+        <div>
           {blogPosts.map((item) => (
             <IndividualPost
               key={`individual+${item.id}`}

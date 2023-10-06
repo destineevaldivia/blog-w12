@@ -1,10 +1,9 @@
 const Thumbnail = (props) => {
-  const { title, location, id } = props;
+  const { location, id } = props;
   return (
     <div>
       <div className="thumbnail-container">
         {id}
-        {title}
         {location}
       </div>
     </div>
