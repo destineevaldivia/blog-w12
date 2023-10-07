@@ -7,7 +7,7 @@ const Blog = ({ blogPosts, loadData }) => {
   return (
     <div>
       <h2>Destinees Travel Blog </h2>
-      <BlogTable blogPosts={blogPosts} />
+      <BlogTable blogPosts={blogPosts} loadData={loadData} />
       <AddPostForm loadData={loadData} />
     </div>
   );

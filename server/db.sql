@@ -8,15 +8,16 @@ CREATE TABLE blog_post (
   location TEXT NOT NULL,
   content TEXT NOT NULL,
   author VARCHAR(255),
+  photo bytea,
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO blog_post (title, location, content, author)
+INSERT INTO blog_post (title, location, content, author,)
 VALUES 
-    ('Birthday trip extended', 'Oaxaca Centro', 'will fill out later', 'Destinee'),
-    ('Primavera Sound', 'Barcelona', 'will fill out later', 'Destinee'),
-    ('Funemployed', 'Rio De Janeiro', 'will fill out later', 'Destinee');
+    ('Birthday trip extended', 'Mexico', 'On this trip we started in Mexico City, then we went to Oaxaca Centro, Puerto Escondito and San Jose del Pacifico, we celebrated many special occasions like my birthday, day of the dead, and our 1 year anniversary. It was wonderful!', 'Destinee', ''),
+    ('Primavera Sound', 'Spain', 'will fill out later', 'Destinee'),
+    ('Funemployed', 'Brazil', 'will fill out later', 'Destinee');
 
 
 ---
