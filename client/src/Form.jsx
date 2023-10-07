@@ -49,7 +49,7 @@ const AddPostForm = ({ loadData }) => {
 
   // Renders the form
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <label>
           Title:
@@ -68,7 +68,7 @@ const AddPostForm = ({ loadData }) => {
             name="location"
             value={formData.location}
             onChange={handleChange}
-            placeholder="where were you?"
+            placeholder="Where were you?"
           />
         </label>
         <label>
@@ -78,7 +78,7 @@ const AddPostForm = ({ loadData }) => {
             name="content"
             value={formData.content}
             onChange={handleChange}
-            placeholder="your post goes here"
+            placeholder="Tell us about it"
           />
         </label>
         <label>

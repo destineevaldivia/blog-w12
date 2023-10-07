@@ -13,6 +13,7 @@ const BlogTable = ({ blogPosts, loadData }) => {
           {blogPosts.map((item) => (
             <Link key={`thumbnail+${item.id}`} to={`/blog/${item.id}`}>
               <Thumbnail location={item.location} src={item.img} />
+              <button>delete</button>
             </Link>
           ))}
         </div>
