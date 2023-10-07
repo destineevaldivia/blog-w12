@@ -2,7 +2,7 @@ import BlogTable from "./BlogTable";
 import AddPostForm from "./Form";
 
 // Accepts the blogPost state as a prop, which contains an array of my data
-//
+// Also accepts loadData function
 const Blog = ({ blogPosts, loadData }) => {
   return (
     <div>

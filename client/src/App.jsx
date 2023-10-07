@@ -27,6 +27,8 @@ const App = () => {
   }, []);
 
   console.log("inside App.jsx", blogPosts);
+
+  // Using React Router library to define two routes for my app
   return (
     <>
       <div>

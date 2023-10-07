@@ -1,24 +1,16 @@
+import react from "react";
 import { useParams } from "react-router-dom";
 
-const IndividualPost = ({ blogPosts, title, location, content, author }) => {
+const IndividualPost = ({ blogPosts }) => {
   const { blogid } = useParams();
-  console.log("inside individual post", blogPosts);
+  const post = blogPosts.find((post) => post.id === Number(blogid));
 
-  // if (!blogPosts) {
-  //   return <div>loading...</div>;
-  // }
+  if (!post) {
+    return <div>Post not found..</div>;
+  }
 
-  // const result = blogPosts.find((post) => post.id == blogid);
+  const { title, location, content, author } = post;
 
-  // {blogPosts.find((post) => (
-  //   post.id ==blogid
-  // ))}
-  // }
-  // let [result] = blogPosts.filter((post) => post.id == blogid);
-  // let { title, author, content } = result;
-  // console.log("result", result);
-
-  // const { title, location, content, author } = result;
   return (
     <div>
       <div className="individual-container">

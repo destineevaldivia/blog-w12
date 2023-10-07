@@ -12,19 +12,8 @@ const BlogTable = ({ blogPosts, loadData }) => {
         <div>
           {blogPosts.map((item) => (
             <Link key={`thumbnail+${item.id}`} to={`/blog/${item.id}`}>
-              <Thumbnail location={item.location} />
+              <Thumbnail location={item.location} src={item.img} />
             </Link>
-          ))}
-        </div>
-        <div>
-          {blogPosts.map((item) => (
-            <IndividualPost
-              key={`individual+${item.id}`}
-              title={item.title}
-              location={item.location}
-              content={item.content}
-              author={item.author}
-            />
           ))}
         </div>
       </div>
