@@ -1,6 +1,6 @@
-# Blog project
+# Travel Blog Project
 
-Overview:
+Overview: A fullstack app which displays 3 posts about my recent travel. The thumbnails show the location and are clickable so that the user can read the content of the post. It has functionality to add a new post which will render the update on the page as well as in my travelblog databse.
 
 Technology: React, JavaScript / NodeJs,Express,SQLPostgres, React Router
 
